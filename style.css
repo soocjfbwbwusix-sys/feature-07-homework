@@ -1,0 +1,268 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap');
+
+
+/* =========================
+   ОБЩИЕ НАСТРОЙКИ
+========================= */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #e6e6e6;
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+    color: #515076;
+}
+
+
+/* =========================
+   БЕЛАЯ РАБОЧАЯ ОБЛАСТЬ
+========================= */
+
+.page {
+    position: relative;
+
+    width: 1280px;
+    min-height: 1715px;
+
+    background-color: #ffffff;
+
+    margin: 10px auto;
+    padding: 90px 85px;
+
+    overflow: hidden;
+}
+
+
+/* =========================
+   ДЕКОРАТИВНЫЙ ФОН
+========================= */
+
+.page::before {
+    content: "";
+
+    position: absolute;
+
+    top: 20px;
+    left: 35px;
+
+    width: 790px;
+    height: 697px;
+
+    background-image: url("images/bg1.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+
+    filter: invert(1);
+    mix-blend-mode: multiply;
+
+    opacity: 0.10;
+
+    pointer-events: none;
+    z-index: 0;
+}
+
+
+/* изображение поверх фона */
+
+.page > * {
+    position: relative;
+    z-index: 1;
+}
+
+/*заголовок*/
+
+h1 {
+    color: #515076;
+
+    font-size: 60px;
+    font-weight: 400;
+
+    text-align: center;
+
+    margin: 0 0 40px;
+}
+
+
+/* кнопки фильтров*/
+
+.buttons {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+
+    gap: 10px;
+
+    margin-bottom: 35px;
+}
+
+.buttons button {
+    background-color: #515076;
+    color: white;
+
+    border: none;
+    border-radius: 5px;
+
+    padding: 10px 15px;
+
+    font-family: 'Montserrat', sans-serif;
+    font-size: 12px;
+
+    cursor: pointer;
+
+    transition: all 0.3s ease;
+}
+
+.buttons button:hover {
+    background-color: #777791;
+
+    transform: translateY(-3px);
+}
+
+
+/* контейнер с карточками*/
+
+.products {
+    display: flex;
+    flex-wrap: wrap;
+
+    justify-content: center;
+
+    width: 1110px;
+
+    margin: 0 auto;
+
+    column-gap: 45px;
+    row-gap: 45px;
+}
+
+
+/*КАРТОЧКА*/
+
+.card {
+    width: 340px;
+    height: 573px;
+
+    background-color: #f7f7f9;
+
+    padding: 20px;
+
+    border-radius: 4px;
+
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+
+    cursor: pointer;
+
+    transition: background-color 0.3s ease;
+}
+
+
+/*изображение товара*/
+
+.card img {
+    width: 290px;
+    height: 245px;
+
+    object-fit: contain;
+
+    display: block;
+
+    margin-bottom: 25px;
+
+    background-color: #ffffff;
+}
+
+
+/*описание товара*/
+
+.card p {
+    font-size: 13px;
+    line-height: 1.5;
+
+    color: #777791;
+
+    margin: 8px 0;
+}
+
+
+/*название товара*/
+
+.card h2 {
+    font-size: 19px;
+    font-weight: 700;
+
+    color: #515076;
+
+    margin: 10px 0;
+}
+
+
+/*цена*/
+
+
+/* Расположение цены */
+
+.price {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    margin-top: 22px;
+
+    color: #515076;
+}
+
+.price strong {
+    font-size: 17px;
+    font-weight: 700;
+}
+
+.price span {
+    font-size: 16px;
+    font-weight: 400;
+}
+
+
+
+/*выбрать карточку*/
+
+.card.selected {
+    outline: 3px solid #515076;
+    outline-offset: 3px;
+}
+
+
+/*антистресс кнобка */
+
+.card.shake {
+    animation: stress 0.5s ease;
+}
+
+@keyframes stress {
+
+    0% {
+        transform: scale(1) rotate(0deg);
+    }
+
+    25% {
+        transform: scale(1.05) rotate(-3deg);
+    }
+
+    50% {
+        transform: scale(1.05) rotate(3deg);
+    }
+
+    75% {
+        transform: scale(1.05) rotate(-2deg);
+    }
+
+    100% {
+        transform: scale(1) rotate(0deg);
+    }
+
+}
+
+
